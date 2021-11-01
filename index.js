@@ -1,3 +1,11 @@
+function DrumSound(key) {
+    this.soundType = getSoundType(key)
+    this.play = function () {
+        var audio = new Audio("sounds/" + this.soundType + ".mp3");
+        audio.play();
+    }
+}
+
 function handleClick(key) {
     alert(key + " got clicked");
 }
@@ -33,8 +41,9 @@ function setupEventListeners() {
         var btn = btns[i]
         btn.addEventListener("click", function () {
             var key = this.innerHTML;
-            var soundType = getSoundType(key);
-            playSound(soundType);
+            var drumSound = new DrumSound(key);
+            drumSound.play()
+            // playSound(soundType);
         });
     }
     // alert("Event Listeners Setup!OO");
