@@ -1,3 +1,5 @@
+const relevantKeys = ["w", "a", "s", "d", "j", "k", "l"];
+
 function DrumSound(key) {
     this.soundType = getSoundType(key)
     this.play = function () {
@@ -6,8 +8,8 @@ function DrumSound(key) {
     }
 }
 
-function handleClick(key) {
-    alert(key + " got clicked");
+function isRelevantKey(key) {
+    return relevantKeys.includes(key)
 }
 
 function getSoundType(key) {
@@ -35,7 +37,16 @@ function playSound(type) {
     audio.play();
 }
 
+function handleKeydowns(key) {
+    var keyToHandle = key.toLowerCase();
+    if (isRelevantKey(keyToHandle)) {
+        var drumSound = new DrumSound(keyToHandle);
+        drumSound.play();
+    }
+}
+
 function setupEventListeners() {
+    // Page button events
     var btns = document.querySelectorAll("button");
     for (i = 0 ; i < btns.length ; i++) {
         var btn = btns[i]
@@ -43,10 +54,14 @@ function setupEventListeners() {
             var key = this.innerHTML;
             var drumSound = new DrumSound(key);
             drumSound.play()
-            // playSound(soundType);
         });
     }
-    // alert("Event Listeners Setup!OO");
+
+    // keyboard events
+    document.addEventListener("keydown", function(event) {
+        handleKeydowns(event.key);
+        console.log(typeof(event.key));
+    });
 }
 
 setupEventListeners();
