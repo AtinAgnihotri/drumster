@@ -1,0 +1,76 @@
+body {
+    text-align: center;
+    background-color: #283149;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #DBEDF3;
+    font-family: "Arvo", cursive;
+    text-shadow: 3px 0 #DA0463;
+    margin-bottom: 0;
+}
+
+footer {
+    color: aliceblue;
+}
+
+.set {
+    /* display: inline-block; */
+    text-align: center;
+    margin: auto;
+    padding: 10rem;
+}
+
+.drum {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-color: aliceblue;
+    border: solid 5px;
+    border-color: plum;
+    color: rgb(155, 12, 155);
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 10px;
+    margin-top: 0;
+}
+
+.drum:hover {
+    font-weight: bolder;
+}
+
+.drum:active {
+    border-color: rgb(155, 12, 155);
+    /* color: plum; */
+    box-shadow: 0 3px 4px 0 aliceblue;
+    /* opacity: 0.5; */
+}
+
+.w {
+    background-image: url("images/tom.png");
+}
+
+.a {
+
+}
+
+.s {
+
+}
+
+.d {
+
+}
+
+.j {
+
+}
+
+.k {
+
+}
+
+.l {
+
+}
