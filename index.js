@@ -2,8 +2,28 @@ function handleClick(key) {
     alert(key + " got clicked");
 }
 
-function playSound() {
-    var audio = new Audio("sounds/tom-4.mp3");
+function getSoundType(key) {
+    switch (key) {
+        case "w":
+            return "tom-1";
+        case "a":
+            return "tom-2";
+        case "s":
+            return "tom-3";
+        case "d":
+            return "tom-4";
+        case "j":
+            return "snare";
+        case "k":
+            return "kick-bass";
+        default:
+            return "crash";
+    }
+}
+
+
+function playSound(type) {
+    var audio = new Audio("sounds/" + type + ".mp3");
     audio.play();
 }
 
@@ -11,15 +31,10 @@ function setupEventListeners() {
     var btns = document.querySelectorAll("button");
     for (i = 0 ; i < btns.length ; i++) {
         var btn = btns[i]
-        var key = btn.innerHTML;
-        var message = key.toUpperCase() + " got clicked";
-        // btn.addEventListener("click", handleClick);
         btn.addEventListener("click", function () {
-            // alert(message);
-            // playSound();
-            alert(message);
-            var audio = new Audio("sounds/tom-4.mp3");
-            audio.play();
+            var key = this.innerHTML;
+            var soundType = getSoundType(key);
+            playSound(soundType);
         });
     }
     // alert("Event Listeners Setup!OO");
