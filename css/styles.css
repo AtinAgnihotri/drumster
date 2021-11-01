@@ -24,12 +24,12 @@ footer {
 
 .drum {
     display: inline-block;
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     background-color: aliceblue;
     border: solid 5px;
     border-color: plum;
-    color: rgb(155, 12, 155);
+    color: rgb(139, 118, 255);
     font-size: 2rem;
     font-weight: normal;
     margin: 10px;
@@ -48,29 +48,36 @@ footer {
 }
 
 .w {
-    background-image: url("images/tom.png");
+    background-image: url("../images/tom1.png");
+    background-size: 120%;
 }
 
 .a {
-
+    background-image: url("../images/tom2.png");
+    background-size: 120%;
 }
 
 .s {
-
+    background-image: url("../images/tom3.png");
+    background-size: 100%;
 }
 
 .d {
-
+    background-image: url("../images/tom4.png");
+    background-size: 100%;
 }
 
 .j {
-
+    background-image: url("../images/snare.png");
+    background-size: 100%;
 }
 
 .k {
-
+    background-image: url("../images/kick.png");
+    background-size: 100%;
 }
 
 .l {
-
+    background-image: url("../images/crash.png");
+    background-size: 100%;
 }
