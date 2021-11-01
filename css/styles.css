@@ -81,3 +81,9 @@ footer {
     background-image: url("../images/crash.png");
     background-size: 100%;
 }
+
+.pressed {
+    font-weight: bolder;
+    border-color: rgb(155, 12, 155);
+    box-shadow: 0 3px 4px 0 aliceblue;
+}

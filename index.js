@@ -8,6 +8,12 @@ function DrumSound(key) {
     }
 }
 
+function buttonAnimation(key) {
+    var button = document.querySelector("." + key);
+    button.classList.add("pressed");
+    setTimeout(function () { button.classList.remove("pressed"); }, 200);
+}
+
 function isRelevantKey(key) {
     return relevantKeys.includes(key)
 }
@@ -40,6 +46,7 @@ function playSound(type) {
 function handleKeydowns(key) {
     var keyToHandle = key.toLowerCase();
     if (isRelevantKey(keyToHandle)) {
+        buttonAnimation(keyToHandle);
         var drumSound = new DrumSound(keyToHandle);
         drumSound.play();
     }
